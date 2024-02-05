@@ -1,0 +1,44 @@
+section {
+  border: 1px solid red;
+  height: 250px;
+  overflow: scroll;
+  width: 60%;
+  margin-inline: auto;
+  position: relative;
+}
+article {
+  background-color: salmon;
+  height: 100px;
+  width: 100px;
+}
+.sticky {
+  background-color: yellow;
+  height: 20px;
+  width: 100%;
+  position: sticky;
+  left: 0;
+  bottom: 0%;
+  top: 0%;
+}
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 20px;
+}
+.relative {
+  position: relative;
+  top: 0;
+  left: 20px;
+}
+.absolute {
+  position: relative;
+  top: 0;
+  left: 20px;
+}
+.static {
+  position: static;
+}
+
+#spacing {
+  height: 100vh;
+}

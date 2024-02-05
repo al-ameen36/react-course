@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <link rel="stylesheet" href="/css/blog.css" />
+  </head>
+  <body>
+    <!-- parent element -->
+    <main>
+      <!-- The default position set on all elements -->
+      <section>
+        <h2>Static</h2>
+        <article class="static">
+          <h3>Static</h3>
+        </article>
+        <article class="static">
+          <h3>Static</h3>
+        </article>
+        <article class="static">
+          <h3>Static</h3>
+        </article>
+        <article class="static">
+          <h3>Static</h3>
+        </article>
+      </section>
+      <section>
+        <!-- The element is positioned relative to where it was supposed to appear in the document -->
+        <h2>Relative</h2>
+        <article class="relative">
+          <h3>Relative</h3>
+        </article>
+        <article class="static">
+          <h3>Static</h3>
+        </article>
+        <article class="static">
+          <h3>Static</h3>
+        </article>
+        <article class="static">
+          <h3>Static</h3>
+        </article>
+      </section>
+      <section>
+        <!-- The element is positioned relative to its closest parent with a position property (the position has to be set to any value other than "static") -->
+        <h2>Absolute</h2>
+        <article class="absolute">
+          <h3>Absolute</h3>
+        </article>
+        <article class="static">
+          <h3>Static</h3>
+        </article>
+        <article class="static">
+          <h3>Static</h3>
+        </article>
+        <article class="static">
+          <h3>Static</h3>
+        </article>
+      </section>
+      <section>
+        <!-- The element is positioned relative to the browser window (viewport) -->
+        <h2>Fixed</h2>
+        <article class="fixed">
+          <h3>Fixed</h3>
+        </article>
+        <article class="static">
+          <h3>Static</h3>
+        </article>
+        <article class="static">
+          <h3>Static</h3>
+        </article>
+        <article class="static">
+          <h3>Static</h3>
+        </article>
+      </section>
+      <section>
+        <!-- The element changes between static positioning and fixed depending on the values of left,right,top,bottom -->
+        <!-- Unlike fixed, sticky is positioned relative to its closest parent with a position set to any value other than "static" -->
+        <h2>Sticky</h2>
+        <article class="static">
+          <h3>Static</h3>
+        </article>
+        <article class="static">
+          <h3>Static</h3>
+        </article>
+        <article class="sticky">
+          <h3>Sticky</h3>
+        </article>
+        <article class="static">
+          <h3>Static</h3>
+        </article>
+        <article class="static">
+          <h3>Static</h3>
+        </article>
+        <article class="static">
+          <h3>Static</h3>
+        </article>
+      </section>
+
+      <section>
+        <h2>Z-index</h2>
+        <!-- When elements are overlapping the order of the stack is changed by z-index -->
+        <!-- The higher the z-index the higher it appears in the stack -->
+        <article
+          style="
+            position: absolute;
+            top: 80px;
+            left: 30px;
+            z-index: 50;
+            background-color: blue;
+          "
+        >
+          <h3>Z-index: 1</h3>
+        </article>
+        <article
+          style="position: absolute; top: 90px; left: 20px; z-index: 100"
+        >
+          <h3>Z-index: 2</h3>
+        </article>
+        <article
+          style="
+            position: absolute;
+            top: 100px;
+            left: 10px;
+            z-index: 300;
+            background-color: green;
+          "
+        >
+          <h3>Z-index: 3</h3>
+        </article>
+      </section>
+    </main>
+    <!-- add spacing to make the page scroll -->
+    <div id="spacing"></div>
+  </body>
+</html>
