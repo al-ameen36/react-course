@@ -37,4 +37,4 @@ other HTML elements on the page
 ** Question 2 **
 - Read up on the following
 1. CSS selectors -> "~", "+" and ">"
-2. Apply them to any designor the assignment
+2. Apply them to any design or the assignment
