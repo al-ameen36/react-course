@@ -1,3 +1,4 @@
+** Question 1 **
 - Try making a page that looks as similar to the images as possible. 
 - Try to figure out which styles were applied and where they were applied. 
 
@@ -31,3 +32,9 @@ other HTML elements on the page
 3. fa fa-shopping-cart
 4. fa fa-list
 5. fa fa-search
+
+
+** Question 2 **
+- Read up on the following
+1. CSS selectors -> "~", "+" and ">"
+2. Apply them to any designor the assignment
