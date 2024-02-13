@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  font-style: normal;
+}
+
+img {
+  max-width: 100%;
+}
+
+#slider {
+  border: 3px solid red;
+  gap: 60px;
+  overflow: hidden;
+}
+
+.sliding_part {
+  display: flex;
+  justify-content: center;
+  transition: 0.5s;
+}
+
+/*  */
+#slider:hover .sliding_part {
+  transform: translateX(-300px);
+}
+
+#slider:hover .slide2 {
+  transform: scale(0.6);
+}
+
+#slider:hover .slide3 {
+  transform: scale(1);
+}
+
+#slider:hover .slide3 .description {
+  opacity: 1;
+}
+
+#slider .slide2 .description {
+  opacity: 1;
+}
+
+#slider:hover .slide2 .description {
+  opacity: 0;
+}
+
+.slide.slide2 {
+  transform: scale(1);
+}
+
+.slide {
+  text-align: center;
+  transform: scale(0.6);
+  transition: 0.5s;
+}
+
+/*  */
+
+.icon {
+  font-size: 2em;
+}
+
+.title {
+  font-size: 2em;
+  font-weight: 900;
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.image_container {
+  height: 300px;
+  margin-inline: auto;
+  width: 300px;
+}
+
+.image_container img {
+  height: 100%;
+  width: 100%;
+}
+
+.image_container {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.description {
+  margin-inline: auto;
+  max-width: 40ch;
+  opacity: 0;
+  transition: 0.5s;
+}
