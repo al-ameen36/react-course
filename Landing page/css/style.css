@@ -1,0 +1,125 @@
+/* link to the design */
+/* https://blog.hubspot.com/hs-fs/hubfs/Landing%20Page%20Template%201.jpg?width=1500&name=Landing%20Page%20Template%201.jpg */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: "Fredoka", sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header {
+    margin-top: 50px;
+}
+
+header,
+main,
+footer {
+    margin-inline: auto;
+    max-width: 1300px;
+}
+
+#logo img {
+    width: 150px;
+}
+
+#main_nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+}
+
+#left,
+#right,
+#hero {
+    align-items: center;
+    display: flex;
+}
+
+#left {
+    column-gap: 70px;
+}
+
+#right {
+    column-gap: 30px;
+}
+
+#search_field {
+    color: #fff;
+    background-color: #000;
+    border: none;
+    border-radius: 40px;
+    height: 40px;
+    padding-left: 12px;
+    width: 200px;
+}
+
+#hero {
+    justify-content: space-between;
+    gap: 50px;
+    padding-block: 50px;
+}
+
+#text h1 {
+    font-size: 4em;
+    font-weight: 500;
+    line-height: .9;
+    max-width: 18ch;
+}
+
+#text p {
+    max-width: 60ch;
+}
+
+#cta_btn {
+    background-color: tomato;
+    display: block;
+    font-size: 1em;
+    padding: 15px 40px;
+    margin-top: 50px;
+}
+
+
+footer {
+    display: flex;
+    gap: 40px;
+}
+
+footer>* {
+    width: 33.3%
+}
+
+#social_links {
+    display: flex;
+    column-gap: 15px;
+}
+
+#social_links a {
+    align-items: center;
+    background-color: tomato;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    font-size: 1.3em;
+    height: 50px;
+    justify-content: center;
+    width: 50px;
+}
+
+.post {
+    text-align: center;
+}
+
+.post h3 {
+    font-weight: 400;
+}
