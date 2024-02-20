@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.box {
+    animation-name: rotate;
+    animation-fill-mode: both;
+    transform: rotateZ(45deg);
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: 1s;
+    background-color: black;
+    height: 300px;
+    width: 300px;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateZ(0deg)
+    }
+
+    20% {
+        background-color: yellow;
+
+    }
+
+    40% {
+
+        background-color: purple;
+    }
+
+    100% {
+        background-color: brown;
+        transform: rotateZ(360deg)
+    }
+}
