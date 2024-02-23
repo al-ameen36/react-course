@@ -1,3 +1,4 @@
 ** Question 1 **
 
-Create an awesome animation of your choice
+Take a look at pinterest.com. Attempt recreating their image grid.
+Also try designing their fixed navigation.
