@@ -1,4 +1,7 @@
 ** Question 1 **
 
-Take a look at pinterest.com. Attempt recreating their image grid.
-Also try designing their fixed navigation.
+Take a look at pinterest.com. Attempt recreating their image grid 
+- images have different heights
+- images fill the available space above them
+- Also try designing their fixed navigation
+- Design the mobile view, you can also challenge yourself with the desktop view of the website.
