@@ -1,7 +1,18 @@
 ** Question 1 **
 
-Take a look at pinterest.com. Attempt recreating their image grid 
-- images have different heights
-- images fill the available space above them
-- Also try designing their fixed navigation
-- Design the mobile view, you can also challenge yourself with the desktop view of the website.
+Add 4 new features to our banking app
+- Copy our banking logic to a new file
+- Add a feature and describe it
+- Write the descriptions as comments in your code
+
+Example features to add
+- Check balance
+- Buy utility (meter no, meter owners name ....)
+
+Note: 
+- Use string concatenation to give the user feedback after every action
+- Comment are not considered code (by javascript), so they are not executed
+- Comments lines start with "//" 
+
+e.g 
+// this is a sample comment
