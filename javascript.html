@@ -79,27 +79,87 @@
 
         // first transaction
         let newBalance = 1000 - amount
-        console.log(newBalance);
+        // console.log("You have been debited " + newBalance + " Naira");
 
         // second transaction
         amount = 700
         transactionType = "debit"
         newBalance = newBalance - amount
-        console.log(newBalance);
+        // console.log("You have been debited " + newBalance + " Naira");
 
         // third transaction
         amount = 100
         transactionType = "debit"
         newBalance = newBalance - amount
-        console.log(newBalance);
+        // console.log("You have been debited " + newBalance + " Naira");
 
         // forth transaction
         amount = 10000
         transactionType = "credit"
         newBalance = newBalance + amount
-        console.log(newBalance);
+        // console.log("You have been credited " + newBalance + " Naira");
 
-        // Object and null
+        // Object, null and NaN
+        const laptop1 = {
+            name: "Alienware",
+            color: "white"
+        }
+        const laptop2 = {
+            name: "elitebook",
+            color: "silver"
+        }
+        // console.log(laptop1, laptop2);
+        // console.log(typeof amount) // tells us the type of variable
+
+        // methods
+        // console.log(amount.toLocaleString())
+        amount = amount * 1.56785234235
+        // console.log(amount.toFixed(3))
+
+        // console.log(transactionType.charAt(0))
+        // console.log(transactionType.charCodeAt(0))
+        // console.log(transactionType.endsWith("dit"))
+        // console.log(transactionType.includes("credit"))
+        // console.log(transactionType.indexOf("credit"))
+        // console.log(transactionType.lastIndexOf("t"))
+        // console.log(transactionType.localeCompare("credit"))
+        let bit1 = "01" // 0001 or 1000
+        let bit2 = "1" // 0001 or 1000
+        // console.log(bit1.padEnd(3, "0"))
+        // console.log(bit2.padStart(3, "0"))
+
+
+        // accessing array values
+        const names = ["Abdurrahman", "Amina", "Maryam"]
+        // console.log(names);
+        // console.log(names[1]);
+
+        // array methods
+        // console.log(names.copyWithin(0, 1, 2))
+        // console.log(names.includes("Amina")) // case sensitive
+        // console.log(names.indexOf("Amina"))
+        // console.log(names.join(", "))
+        // console.log(names.length) // a property
+        // console.log(names.pop(), names)
+        // console.log(names.push("Musty"), names)
+        // console.log(names.reverse())
+        // console.log(names.shift("Al-Ameen"), names)
+        // console.log(Array.isArray(names), Array.isArray(amount))
+        // console.log(names.push("Musty"), names)
+        // console.log(names.slice(1, 2)) 
+
+        // accessing and using array values
+        // some methods mutate/change the value of the variable
+        console.log(names[1] + " & " + names[2]);
+        const numbers1 = [1, 2, 3, 4]
+        const numbers2 = [5, 6, 7, 8]
+        console.log(numbers1[0] * numbers2[3])
+        const numbers3 = numbers1.slice(0, 2) // does not mutate/change numbers1
+        console.log(numbers3, numbers1);
+        const numbers4 = numbers1.reverse() // mutates/changes numbers1
+        console.log(numbers4, numbers1);
+
+        // conditionals
 
 
 
