@@ -1,18 +1,17 @@
 ** Question 1 **
 
-Add 4 new features to our banking app
-- Copy our banking logic to a new file
-- Add a feature and describe it
-- Write the descriptions as comments in your code
+- Reverse the logic for our grading system
+- it should start checking from the least grade
+e.g from F - E - D - C - B - A
 
-Example features to add
-- Check balance
-- Buy utility (meter no, meter owners name ....)
+
+** Question 2 **
+
+- Update our banking system
+- Create object to store transaction related data
+- Create object to store account related data
 
 Note: 
-- Use string concatenation to give the user feedback after every action
-- Comment are not considered code (by javascript), so they are not executed
-- Comments lines start with "//" 
-
-e.g 
-// this is a sample comment
+- To change the value of an object property you can do one of the following
+1. object.propertyName = "value"
+2. object["propertyName"] = "value"
