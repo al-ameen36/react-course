@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <header>
+        <h1>Intro to DOM manipulation</h1>
+    </header>
+    <main>
+        <div>
+            <input id="number1" type="text" placeholder="number">
+            <select id="operator" onchange="changeOperator()">
+                <option value="-">-</option>
+                <option value="+">+</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <input id="number2" type="text" placeholder="number">
+            <span>=</span>
+            <span id="answer"><span>x</span></span>
+        </div>
+        <div>
+            <button onclick="calculate()">Calculate</button>
+        </div>
+    </main>
+    <script>
+        const input1 = document.getElementById("number1")
+        const input2 = document.getElementById("number2")
+        const answer = document.getElementById("answer")
+        const operator = document.getElementById("operator")
+
+        let op = operator.value
+        console.log(op);
+
+        function changeOperator(){
+            op = operator.value;
+        }
+
+        function add(){
+            const sum = parseFloat(input1.value) + parseFloat(input2.value)
+            answer.textContent = sum
+            return sum
+        }
+        function sub(){
+            const sum = parseFloat(input1.value) - parseFloat(input2.value)
+            answer.textContent = sum
+            return sum
+        }
+        function mul(){
+            const sum = parseFloat(input1.value) * parseFloat(input2.value)
+            answer.textContent = sum
+            return sum
+        }
+        function div(){
+            const sum = parseFloat(input1.value) / parseFloat(input2.value)
+            answer.textContent = sum
+            return sum
+        }
+
+        function calculate(){
+            if(op == "+") add();
+            else if(op == "-") sub();
+            else if(op == "*") mul();
+            else if(op == "/") div();
+        }
+
+    </script>
+</body>
+</html>
