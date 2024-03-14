@@ -3,64 +3,114 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Slider</title>
 
-    <link rel="stylesheet" href="/css/slider.css" />
-  </head>
-  <body>
-    <main>
-      <h1>slider</h1>
-      <section id="slider">
-        <div class="sliding_part">
-          <article class="slide slide1">
-            <span class="fa fa-sun icon"></span>
-            <h2 class="title">Seas</h2>
-            <div class="image_container">
-              <img src="/assets/images/david-becker.jpg" alt="" />
-            </div>
-            <p class="description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit,
-              veniam?
-            </p>
-          </article>
-          <article class="slide slide2">
-            <span class="fa fa-sun icon"></span>
-            <h2 class="title">Seas</h2>
-            <div class="image_container">
-              <img src="/assets/images/david-becker.jpg" alt="" />
-            </div>
-            <p class="description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit,
-              veniam?
-            </p>
-          </article>
-          <article class="slide slide3">
-            <span class="fa fa-sun icon"></span>
-            <h2 class="title">Seas</h2>
-            <div class="image_container">
-              <img src="/assets/images/david-becker.jpg" alt="" />
-            </div>
-            <p class="description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit,
-              veniam?
-            </p>
-          </article>
-        </div>
-      </section>
-    </main>
-    <div>
-      <!-- border -->
-      <div>
-        <!-- background, border -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slider</title>
+
+  <link rel="stylesheet" href="/css/slider.css" />
+</head>
+
+<body>
+  <main>
+    <h1>slider</h1>
+    <section id="slider">
+      <div class="sliding_part">
+        <article class="slide slide1">
+          <span class="fa fa-sun icon"></span>
+          <h2 class="title">Seas</h2>
+          <div class="image_container">
+            <img src="/assets/images/david-becker.jpg" alt="" />
+          </div>
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit,
+            veniam?
+          </p>
+        </article>
+        <article class="slide slide2">
+          <span class="fa fa-sun icon"></span>
+          <h2 class="title">Seas</h2>
+          <div class="image_container">
+            <img src="/assets/images/david-becker.jpg" alt="" />
+          </div>
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit,
+            veniam?
+          </p>
+        </article>
+        <article class="slide slide3">
+          <span class="fa fa-sun icon"></span>
+          <h2 class="title">Seas</h2>
+          <div class="image_container">
+            <img src="/assets/images/david-becker.jpg" alt="" />
+          </div>
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit,
+            veniam?
+          </p>
+        </article>
+        <article class="slide slide3">
+          <span class="fa fa-sun icon"></span>
+          <h2 class="title">Seas</h2>
+          <div class="image_container">
+            <img src="/assets/images/david-becker.jpg" alt="" />
+          </div>
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit,
+            veniam?
+          </p>
+        </article>
       </div>
+      <div id="controls">
+        <button id="prev"><span class="fa fa-arrow-left"></span></button>
+        <button id="next"><span class="fa fa-arrow-right"></span></button>
+      </div>
+    </section>
+  </main>
+  <div>
+    <!-- border -->
+    <div>
+      <!-- background, border -->
     </div>
+  </div>
 
-    <script
-      src="https://kit.fontawesome.com/6c293f66ad.js"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  <script src="https://kit.fontawesome.com/6c293f66ad.js" crossorigin="anonymous"></script>
+  <script>
+    const prevBtn = document.getElementById("prev")
+    const nextBtn = document.getElementById("next")
+    const sliders = document.getElementsByClassName("sliding_part")
+
+    let position = 0
+    const numberOfSlides = sliders[0].children.length
+    const slideWidth = 300
+
+    function next() {
+      // numberOfSlides * slideWidth = 900
+      // sliders[0].style.backgroundColor = "black"
+      // 0 > -300 * (3-1) first click
+      // -300 > -300 * (3-1) seccond click
+      if (position < numberOfSlides - 1) {
+        position++
+        sliders[0].style.transform = "translateX(" + -(position * slideWidth) + "px)"
+        // select the current child
+        // change its transform style = scale(1);
+      }
+      console.log(sliders[0].style.transform, "position: " + position);
+    }
+
+    function prev() {
+      if (position > 0) {
+        position--
+        sliders[0].style.transform = "translateX(" + -(position * slideWidth) + "px)"
+      }
+      console.log(sliders[0].style.transform, "position: " + position);
+    }
+
+    prevBtn.addEventListener("click", prev)
+    nextBtn.addEventListener("click", next)
+
+  </script>
+</body>
+
 </html>
