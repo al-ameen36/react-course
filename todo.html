@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        input[type="checkbox"]:checked+label {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Todo</h1>
+        <section>
+            <input type="text" name="" id="createTodoField" placeholder="Create a new todo...">
+            <!-- before start -->
+            <div id="todoList">
+                <!-- after start -->
+                <!-- <article id="todo-1">
+                    <input type="checkbox" name="" id="isCompleted-1">
+                    <label for="isCompleted-1">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</label>
+                    <button class="deleteBtn" id="delete-1" onclick="deleteTodo1(1)">x</button>
+                </article> -->
+                <!-- before end -->
+            </div>
+            <!-- after end -->
+        </section>
+    </main>
+
+    <script>
+        const createTodo = document.querySelector("#createTodoField")
+        const todoList = document.querySelector("#todoList")
+
+        const updateUI = () => {
+            const html = `<h2 id="emptyState">NO to do items yet!</h2>`
+            // add the html above if our list is/becomes empty
+            if (todoList.children.length < 1)
+                todoList.insertAdjacentHTML("beforeend", html)
+            else {
+                const emptyState = document.getElementById("emptyState")
+                // check if it exist in our HTML. if it does delete it
+                // we are safely checking to avoid errors in cases it doesn't exist
+                if (emptyState) emptyState.remove()
+            }
+        }
+        updateUI()
+
+
+        const deleteTodo1 = (elementId) => {
+            const element = document.querySelector(`#todo-${elementId}`)
+            element.remove()
+            console.log(element);
+            updateUI()
+        }
+
+        createTodo.addEventListener("keypress", function (event) {
+            if (event.key == "Enter") {
+                // get the total number of todo items so far
+                const numOfTodos = todoList.children.length + 1
+                console.log(numOfTodos);
+
+                // our HTML to be added
+                const html = `<article id="todo-${numOfTodos}">
+                    <input type="checkbox" name="" id="isCompleted-${numOfTodos}">
+                    <label for="isCompleted-${numOfTodos}">${event.target.value}</label>
+                    <button class="deleteBtn" id="delete-${numOfTodos}" onclick="deleteTodo1(${numOfTodos})">x</button>
+                    </article>`
+
+                // add out HTML at the end of the list
+                todoList.insertAdjacentHTML("beforeend", html)
+                updateUI()
+
+
+                // set the value of our text field to empty so it is cleared when ever we add a new item
+                createTodo.value = ""
+            }
+
+        })
+
+        // the other way
+        // create the <article> element and all its attributes
+        // create the <input type="checkbox"> element and all its attributes
+        // create the <label> element and all its attributes
+        // create the <button> element and all its attributes
+        // append all the elements to the <article> element
+        // append all the <article> to the <div id="todoList"> element
+        // const buttons = document.querySelectorAll(".deleteBtn")
+        // for (let index = 0; index < buttons.length; index++) {
+        //     buttons[index].addEventListener("click", (event) => {
+        //         console.log(event.target.parentElement);
+        //         event.target.parentElement.remove()
+        //     })
+        // }
+
+
+
+    </script>
+
+</body>
+
+</html>
