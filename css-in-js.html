@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        main {
+            max-width: 700px;
+            margin-inline: auto;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        #product_list {
+            display: grid;
+            gap: 20px;
+            transition: .5s;
+        }
+
+        #product_list.grid_view {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        #product_list.list_view {
+            grid-template-columns: 1fr;
+        }
+
+        .list_view article {
+            align-items: end;
+            display: flex;
+            gap: 20px;
+        }
+
+        .list_view article img {
+            width: 200px;
+        }
+
+        .list_view article p {
+            max-width: 40ch;
+        }
+
+        .buy_btn {
+            background-color: orangered;
+            border-radius: 5px;
+            color: #fff;
+            display: inline-block;
+            padding: 10px 30px;
+            text-decoration: none;
+        }
+
+        #actions {
+            margin-bottom: 20px;
+        }
+
+        #actions button {
+            border-radius: 3px;
+            display: inline-block;
+            padding: 10px 15px;
+        }
+
+        #actions button.active {
+            background-color: orangered;
+            color: #fff;
+        }
+
+        button {
+            border-radius: 3px;
+            display: inline-block;
+            padding: 10px 15px;
+        }
+
+        button.active {
+            background-color: black;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>CSS in JS</h1>
+        <div id="actions">
+            <button id="grid_view_btn" class="active"><span class="fa fa-border-all"></span></button>
+            <button id="list_view_btn"><span class="fa fa-table-list"></span></button>
+        </div>
+        <section id="product_list" class="grid_view">
+        </section>
+        <section>
+            <button id="change_class_btn">change classList</button>
+        </section>
+    </main>
+    <script src="https://kit.fontawesome.com/6c293f66ad.js" crossorigin="anonymous"></script>
+    <script>
+        const productList = document.getElementById("product_list")
+        const gridViewBtn = document.getElementById("grid_view_btn")
+        const listViewBtn = document.getElementById("list_view_btn")
+        const changeClassBtn = document.getElementById("change_class_btn")
+
+        // a list of products that will later be used to dynamically add products toour page
+        const products = [
+            { name: "Air Jordan 1", price: "500", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, ullam?", image: "/assets/images/air-jordan-3.png" },
+            { name: "Air Jordan 2", price: "1000", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, ullam?", image: "/assets/images/air-jordan-3.png" },
+            { name: "Air Jordan 3", price: "1500", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, ullam?", image: "/assets/images/air-jordan-3.png" },
+            { name: "Air Jordan 4", price: "2000", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, ullam?", image: "/assets/images/air-jordan-3.png" },
+            { name: "Air Jordan 5", price: "2500", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, ullam?", image: "/assets/images/air-jordan-3.png" },
+        ]
+
+        // loop through the list of products and inserts each product one after the other
+        for (let index = 0; index < products.length; index++) {
+            // select the current product at this iteration
+            const product = products[index]
+
+            // the HTML we want to include
+            const html = `<article>
+                <img src="${product.image}" alt="">
+                <div>
+                    <h3>${product.name}</h3>
+                    <p>${product.description}</p>
+                    <p>	&#8358; ${product.price}</p>
+                    <a class="buy_btn b c" href="">buy now</a>
+                </div>
+            </article>`
+
+            productList.insertAdjacentHTML("beforeend", html)
+
+        }
+
+        // updates our UI so the user has some form of visual feedback
+        const updateUI = (type) => {
+
+            // add "active" class to the grid view button and remove it from the list view button
+            if (type == "grid") {
+                gridViewBtn.className = "active"
+                listViewBtn.className = ""
+            }
+
+            // add "active" class to the list view button and remove it from the grid view button
+            else if (type == "list") {
+                listViewBtn.className = "active"
+                gridViewBtn.className = ""
+            }
+        }
+
+        // using className
+        gridViewBtn.addEventListener("click", () => {
+            productList.className = "grid_view"
+            updateUI("grid")
+        })
+
+        // using className
+        listViewBtn.addEventListener("click", () => {
+            productList.className = "list_view"
+            updateUI("list")
+        })
+
+        // using classList
+        changeClassBtn.addEventListener("click", (event) => {
+            // event.target.classList.add("active")
+            // event.target.classList.remove("active")
+
+            // toggle -> adds the class if it does not exists on the element
+            // toggle -> remove the class if it already exists on the element
+            event.target.classList.toggle("active")
+        })
+    </script>
+</body>
+
+</html>
