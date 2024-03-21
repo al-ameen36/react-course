@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbacks</title>
+</head>
+
+<body>
+    <main>
+        <h1>Javascript Callbacks</h1>
+    </main>
+    <script>
+
+        function add() {
+            // without parameters
+        }
+
+        function add(num1, num2) {
+            // with parameters num1 & num2
+        }
+
+        const sum = () => {
+            // arrow function without parameters
+        }
+
+        const mul = (num1, num2) => {
+            // arrow function with parameters
+            return num1 * num2
+        }
+
+        // function (){
+        // anonymous function
+        // }
+
+        () => {
+            // anonymous arrow function
+        }
+
+        function div(num1, num2) {
+            // return a value -> num1/num2
+            return num1 / num2
+        }
+
+        // e.g 
+        // console.log(div(10, 5)) // using a returned value
+        // console.log(sum(10, 5)) // logs undefined becuase no value returned
+
+        // callback functions
+        // callFn is a higher order function
+        // a higher order function is a function that takes in another function as an argument
+        function callFn(fn) {
+            fn(10, 5) // when div function is passed, fn(10,5) becomes div(10,5)
+        }
+
+        callFn(div) //  fn(10,5) becomes div(10,5)
+        callFn(mul) //  fn(10,5) becomes mul(10,5)
+
+        function callFn2(num1, num2, fn) {
+            return fn(num1, num2)
+        }
+
+        const value = callFn2(10, 2, div)
+        console.log(value);
+
+        const value2 = callFn2(10, 2, mul)
+        console.log(value2);
+
+        // functions defined with the "function" keyword always require a name unless when used as callbacks
+
+        // our custom loop
+        // salary increase function
+        const employees = [
+            { name: "Amina Rabiu", role: "Designer", salary: "1000000" },
+            { name: "Usman Someone", role: "Designer", salary: "800000" },
+            { name: "Maryam Manga", role: "Frontend Developer", salary: "900000" },
+        ]
+
+        const estimateIncreaseInSalary = () => {
+            // requirements
+            // we need to know the employees
+            // we need every employee's salary
+
+            // steps in real life
+            // ask your salary
+            // multiply by 125% or 1.25
+            // we need to tell you your new salary
+
+            // steps in coding
+            // TO DO
+
+        }
+
+    </script>
+</body>
+
+</html>
